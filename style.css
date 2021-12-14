@@ -74,6 +74,7 @@ body {
   justify-content: center;
   align-items: start;
   justify-items: start;
+  /* padding: 15rem; */
 }
 h1 {
   font-size: 5.5rem;
@@ -87,7 +88,7 @@ h4 {
   width: 100%;
   grid-column: 2/3;
   grid-row: 1 / span 4;
-  /* transform: translateY(-6rem); */
+  transform: translateY(-6rem);
 }
 .highlight {
   position: relative;
@@ -105,4 +106,19 @@ h4 {
   opacity: 0.7;
   transform: scale(1.07, 1.05) skewX(-15deg);
   background-image: var(--gradient-primary);
+}
+.section {
+  padding: 15rem 3rem;
+  border-top: 1px solid #ddd;
+}
+.section__title {
+  max-width: 80rem;
+  margin: 0 auto 8rem auto;
+}
+.section__description {
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
 }
