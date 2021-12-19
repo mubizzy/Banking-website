@@ -89,9 +89,10 @@ h4 {
 }
 .header__img {
   width: 100%;
-  grid-column: 2/3;
-  grid-row: 1 / span 4;
+  /* grid-column: 2/3;
+  grid-row: 1 / span 4; */
   transform: translateY(-6rem);
+  grid-area: 1/2 / span 4/3;
 }
 .highlight {
   position: relative;
@@ -161,4 +162,45 @@ h4 {
 .features__icon svg {
   height: 2.5rem;
   width: 2.5rem;
+}
+
+.operations {
+  max-width: 100rem;
+  margin: 12rem auto 0 auto;
+  background-color: #fff;
+}
+.operations__tab-container {
+  display: flex;
+  justify-content: center;
+}
+.operations__tab {
+  margin-right: 2.5rem;
+  transform: translateY(-50%);
+}
+
+.operations__tab span {
+  margin-right: 1rem;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.btn {
+  background-color: violet;
+}
+.operations__tab--1 {
+  background-color: var(--color-secondary);
+}
+.operations__tab--1:hover {
+  background-color: var(--color-secondary-darker);
+}
+
+.operations__tab--3 {
+  background-color: var(--color-tertiary);
+  margin: 0;
+}
+.operations__tab--3:hover {
+  background-color: var(--color-tertiary-darker);
+}
+.operations__tab--active {
+  transform: translateY(-66%);
 }
