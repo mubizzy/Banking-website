@@ -389,3 +389,7 @@ h4 {
 .testimonial__name {
   font-size: 1.7rem;
 }
+
+.section__title--testimonals {
+  margin-bottom: 4rem;
+}
