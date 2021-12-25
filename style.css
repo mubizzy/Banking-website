@@ -77,7 +77,7 @@ body {
   align-items: start;
   justify-items: start;
   /* padding: 15rem; */
-  margin: 0 10rem;
+  margin: 0 8rem;
 }
 h1 {
   font-size: 5.5rem;
@@ -93,8 +93,8 @@ h4 {
   width: 100%;
   /* grid-column: 2/3;
   grid-row: 1 / span 4; */
-  transform: translateY(-6rem);
-  grid-area: 1/2 / span 4/3;
+  /* transform: translateY(-6rem); */
+  grid-area: 1/2 / span 3/4;
   margin: 0 13rem;
 }
 .highlight {
@@ -366,7 +366,6 @@ h4 {
 .testimonial {
   width: 65%;
   position: relative;
-  /*  */
 }
 
 .testimonial::before {
@@ -378,7 +377,7 @@ h4 {
   font-size: 20rem;
   font-family: inherit;
   color: var(--color-primary);
-  z-index: 1;
+  z-index: -1;
 }
 
 .testimonial__text {
@@ -406,4 +405,10 @@ h4 {
 
 .section__title--testimonals {
   margin-bottom: 4rem;
+}
+
+.section--sign-up {
+  /* background-color: #37383d; */
+  border-top: none;
+  border-bottom: 1px solid #444;
 }
