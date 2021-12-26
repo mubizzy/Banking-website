@@ -428,7 +428,49 @@ h4 {
   text-align: center;
 }
 
+.section--sign-up .section__title {
+  margin-bottom: 6rem;
+}
+
 .section--sign-up .btn {
   font-size: 1.9rem;
-  padding: 2rem 50rem;
+  padding: 2rem 5rem;
+}
+
+.footer {
+  padding: 10rem 3rem;
+  background-color: #37383d;
+}
+
+.footer__nav {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5rem;
+}
+
+.footer__item {
+  margin-right: 5rem;
+}
+
+.footer__link {
+  text-decoration: none;
+  color: #eee;
+  font-size: 1.6rem;
+}
+
+.footer__logo {
+  height: 5rem;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 5rem;
+}
+
+.footer__copyright {
+  font-size: 1.4rem;
+  color: #aaa;
+  text-align: center;
+}
+.footer__copyright .footer__link {
+  font-size: 1.4rem;
 }
