@@ -457,6 +457,7 @@ h4 {
   text-decoration: none;
   color: #eee;
   font-size: 1.6rem;
+  padding: 0 3rem;
 }
 
 .footer__logo {
@@ -473,4 +474,7 @@ h4 {
 }
 .footer__copyright .footer__link {
   font-size: 1.4rem;
+}
+
+.modal {
 }
