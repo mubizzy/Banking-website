@@ -55,6 +55,13 @@ body {
   color: inherit;
   transition: all 0.3s;
 }
+
+.nav__link--btn:link,
+.nav__link--btn:visited {
+  padding: 0.8rem 2.5rem;
+  background-color: #8909aa;
+}
+
 .nav__logo {
   height: 4.5rem;
   transition: all 0.3s;
@@ -489,7 +496,7 @@ h4 {
   transition: all 0.5s;
 }
 
-.overlay {
+/* .overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -499,6 +506,20 @@ h4 {
   backdrop-filter: blur(4px);
   z-index: 100;
   transition: all 0.5s;
+} */
+
+.modal__header {
+  font-size: 3.25rem;
+  line-height: 1.5;
+  margin-bottom: 4.5rem;
+}
+
+.modal__form {
+  margin: 0 3rem;
+  display: grid;
+  align-items: center;
+  /* grid-template-columns: 1fr 2fr; */
+  gap: 2.5rem;
 }
 
 .modal__form label {
@@ -518,7 +539,18 @@ h4 {
   margin-top: 1rem;
 }
 
-.hidden {
+.btn--close_modal {
+  font-family: inherit;
+  color: inherit;
+  /* position: absolute; */
+  top: 0.5rem;
+  right: 2rem;
+  font-size: 4rem;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+/* .hidden {
   visibility: hidden;
   opacity: 0;
-}
+} */
