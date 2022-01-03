@@ -7,4 +7,12 @@ const section1 = document.querySelector("#section--1");
 const nav = document.querySelector(".nav");
 const tabs = document.querySelectorAll(".operations__tab");
 const tabsContainer = document.querySelector(".operations__tab-container");
-const tabsContent = document.querySelector(".operations__content");
+const tabsContent = document.querySelectorAll(".operations__content");
+
+//////////////////////////////////Modal window
+
+const openModal = function (e) {
+  e.preventDefault();
+  modal.classList.remove("hidden");
+  overlay.classList.remove("hidden");
+};
