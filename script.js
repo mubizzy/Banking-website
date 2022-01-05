@@ -75,4 +75,9 @@ tabsContainer.addEventListener("click", function (e) {
 
   //Activate tab
   clicked.classList.add("operation__tab--active");
+
+  //Activate content area
+  document
+    .querySelector(`.operations__content--${clicked.dataset.tab}`)
+    .classList.add("operations__content--active");
 });
