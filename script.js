@@ -66,4 +66,13 @@ document.querySelector(".nav__links").addEventListener("click", function (e) {
 
 tabsContainer.addEventListener("click", function (e) {
   const clicked = e.target.closest(".operations__tab");
+
+  //Guard clause
+  if (!clicked) return;
+
+  //Remove active classes
+  tabs.forEach((t) => t.classList.remove("operations__content--active"));
+
+  //Activate tab
+  clicked.classList.add("operation__tab--active");
 });
