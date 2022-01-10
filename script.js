@@ -5,9 +5,9 @@ const btnsOpenModal = document.querySelectorAll(".btn--show-modal");
 const btnScrollTo = document.querySelector(".btn__scroll-to");
 const section1 = document.querySelector("#section--1");
 const nav = document.querySelector(".nav");
-const tabs = document.querySelectorAll(".operations__tab");
-const tabsContainer = document.querySelector(".operations__tab-container");
-const tabsContent = document.querySelectorAll(".operations__content");
+// const tabs = document.querySelectorAll(".operations__tab");
+// const tabsContainer = document.querySelector(".operations__tab-container");
+// const tabsContent = document.querySelectorAll(".operations__content");
 
 //////////////////////////////////Modal window
 
@@ -65,43 +65,51 @@ document.querySelector(".nav__links").addEventListener("click", function (e) {
 ///////////////////
 //Tabbed Component
 
-tabsContainer.addEventListener("click", function (e) {
-  const clicked = e.target.closest(".operations__tab");
+const tabs = document.querySelectorAll(".operations__tab");
 
-  //Guard clause
-  if (!clicked) return;
+const tabsContainer = document.querySelector(".operations__tab-container");
 
-  //Remove active classes
-  tabs.forEach((t) => t.classList.remove("operations__content--active"));
+const tabsContent = document.querySelectorAll(".operations__content");
 
-  //Activate tab
-  clicked.classList.add("operation__tab--active");
+tabs.foreach((s) => s.addEventListener("click", () => console.log("TAB")));
 
-  //Activate content area
-  document
-    .querySelector(`.operations__content--${clicked.dataset.tab}`)
-    .classList.add("operations__content--active");
-});
+// tabsContainer.addEventListener("click", function (e) {
+//   const clicked = e.target.closest(".operations__tab");
 
-// Reveal sections
-const allSections = document.querySelectorAll(".section");
+//   //Guard clause
+//   if (!clicked) return;
 
-const revealSection = function (entries, observer) {
-  const [entry] = entries;
-  console.log(entry);
+//   //Remove active classes
+//   tabs.forEach((t) => t.classList.remove("operations__content--active"));
 
-  if (!entry.isIntersecting) return;
+//   //Activate tab
+//   clicked.classList.add("operation__tab--active");
 
-  entry.target.classList.remove("section--hidden");
-  observer.unobserve(entry.target);
-};
+//   //Activate content area
+//   document
+//     .querySelector(`.operations__content--${clicked.dataset.tab}`)
+//     .classList.add("operations__content--active");
+// });
 
-const sectionObserver = new IntersectionObserver(revealSection, {
-  root: null,
-  threshold: 0.15,
-});
+// // Reveal sections
+// const allSections = document.querySelectorAll(".section");
 
-allSections.forEach(function (section) {
-  sectionObserver.observe(section);
-  section.classList.add("section--hidden");
-});
+// const revealSection = function (entries, observer) {
+//   const [entry] = entries;
+//   console.log(entry);
+
+//   if (!entry.isIntersecting) return;
+
+//   entry.target.classList.remove("section--hidden");
+//   observer.unobserve(entry.target);
+// };
+
+// const sectionObserver = new IntersectionObserver(revealSection, {
+//   root: null,
+//   threshold: 0.15,
+// });
+
+// allSections.forEach(function (section) {
+//   sectionObserver.observe(section);
+//   section.classList.add("section--hidden");
+// });
