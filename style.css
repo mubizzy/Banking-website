@@ -127,6 +127,11 @@ h4 {
   padding: 15rem 3rem;
   border-top: 1px solid #ddd;
 }
+
+.section--hidden {
+  opacity: 0;
+  transform: translateY(6rem);
+}
 .section__title {
   max-width: 80rem;
   margin: 0 auto 8rem auto;

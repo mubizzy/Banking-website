@@ -2,7 +2,7 @@ const modal = document.querySelector(".modal");
 const overlay = document.querySelector(".overlay");
 const btnCloseModal = document.querySelector(".btn--close_modal");
 const btnsOpenModal = document.querySelectorAll(".btn--show-modal");
-const btnScrollTo = document.querySelector(".btn--scroll-to");
+const btnScrollTo = document.querySelector(".btn__scroll-to");
 const section1 = document.querySelector("#section--1");
 const nav = document.querySelector(".nav");
 const tabs = document.querySelectorAll(".operations__tab");
@@ -24,9 +24,9 @@ const closeModal = function () {
 
 btnsOpenModal.forEach((btn) => btn.addEventListener("click", openModal));
 
-btnsCloseModal.forEach((btn) => btn.addEventListener("click", closeModal));
+btnCloseModal.addEventListener("click", openModal);
 
-document.addEventListener("click", closeModal);
+overlay.addEventListener("click", closeModal);
 
 document.addEventListener("keydown", function (e) {
   if (e.key === "Escape" && !modal.classList.contains("hidden")) {
@@ -34,7 +34,8 @@ document.addEventListener("keydown", function (e) {
   }
 });
 
-////////////////////////////////////////////Button scrolling
+////////////////////////////////////////////
+///Button scrolling
 btnScrollTo.addEventListener("click", function (e) {
   const s1coords = section1.getBoundingClientRect();
   console.log(s1coords);
@@ -80,4 +81,27 @@ tabsContainer.addEventListener("click", function (e) {
   document
     .querySelector(`.operations__content--${clicked.dataset.tab}`)
     .classList.add("operations__content--active");
+});
+
+// Reveal sections
+const allSections = document.querySelectorAll(".section");
+
+const revealSection = function (entries, observer) {
+  const [entry] = entries;
+  console.log(entry);
+
+  if (!entry.isIntersecting) return;
+
+  entry.target.classList.remove("section--hidden");
+  observer.unobserve(entry.target);
+};
+
+const sectionObserver = new IntersectionObserver(revealSection, {
+  root: null,
+  threshold: 0.15,
+});
+
+allSections.forEach(function (section) {
+  sectionObserver.observe(section);
+  section.classList.add("section--hidden");
 });
