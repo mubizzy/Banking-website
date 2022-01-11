@@ -71,7 +71,10 @@ const tabsContainer = document.querySelector(".operations__tab-container");
 
 const tabsContent = document.querySelectorAll(".operations__content");
 
-tabs.foreach((s) => s.addEventListener("click", () => console.log("TAB")));
+tabsContainer.addEventListener("click", function (e) {
+  const clicked = e.target;
+  console.log(clicked);
+});
 
 // tabsContainer.addEventListener("click", function (e) {
 //   const clicked = e.target.closest(".operations__tab");
