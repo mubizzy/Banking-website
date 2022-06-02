@@ -72,47 +72,69 @@ const tabsContainer = document.querySelector(".operations__tab-container");
 const tabsContent = document.querySelectorAll(".operations__content");
 
 tabsContainer.addEventListener("click", function (e) {
-  const clicked = e.target;
+  const clicked = e.target.closest(".operations__tab");
   console.log(clicked);
+
+  //Guard clause
+  if (!clicked) return;
+
+  //Remove active classes
+  tabs.forEach((t) => t.classList.remove("operations__content--active"));
+
+  tabsContent.forEach((c) => c.classList.remove("operations__content--active"));
+
+  //   //Activate tab
+  clicked.classList.add("operation__tab--active");
+  console.log(clicked.dataset.tab);
+  //Activate content area
+  const SA = document
+    .querySelector(`.operations__content--${clicked.dataset.tab}`)
+    .classList.add("operations__content--active");
+  console.log(SA);
 });
 
-// tabsContainer.addEventListener("click", function (e) {
-//   const clicked = e.target.closest(".operations__tab");
-
-//   //Guard clause
-//   if (!clicked) return;
-
-//   //Remove active classes
-//   tabs.forEach((t) => t.classList.remove("operations__content--active"));
-
-//   //Activate tab
-//   clicked.classList.add("operation__tab--active");
-
-//   //Activate content area
-//   document
-//     .querySelector(`.operations__content--${clicked.dataset.tab}`)
-//     .classList.add("operations__content--active");
-// });
-
 // // Reveal sections
-// const allSections = document.querySelectorAll(".section");
+const allSections = document.querySelectorAll(".section");
 
-// const revealSection = function (entries, observer) {
-//   const [entry] = entries;
-//   console.log(entry);
+const revealSection = function (entries, observer) {
+  const [entry] = entries;
+  console.log(entry);
 
-//   if (!entry.isIntersecting) return;
+  if (!entry.isIntersecting) return;
 
-//   entry.target.classList.remove("section--hidden");
-//   observer.unobserve(entry.target);
-// };
+  entry.target.classList.remove("section--hidden");
+  observer.unobserve(entry.target);
+};
 
-// const sectionObserver = new IntersectionObserver(revealSection, {
-//   root: null,
-//   threshold: 0.15,
-// });
+const sectionObserver = new IntersectionObserver(revealSection, {
+  root: null,
+  threshold: 0.15,
+});
 
-// allSections.forEach(function (section) {
-//   sectionObserver.observe(section);
-//   section.classList.add("section--hidden");
-// });
+// Menu fade animation
+
+nav.addEventListener("mouseover", function (e) {
+  if (e.target.classList.contains("nav__link")) {
+    const link = e.target;
+    const siblings = link.closest(".nav").querySelectorAll(".nav__link");
+    const logo = link.closest(".nav").querySelectr("img");
+
+    siblings.forEach((el) => {
+      if (el !== link) el.style.opacity = 0.5;
+    });
+    logo.style.opacity = 0.5;
+  }
+});
+
+nav.addEventListener("mouseout", function (e) {
+  if (e.target.classList.contains("nav__link")) {
+    const link = e.target;
+    const siblings = link.closest(".nav").querySelectorAll(".nav__link");
+    const logo = link.closest(".nav").querySelector("img");
+
+    siblings.forEach((el) => {
+      if (el !== link) el.style.opacity = this;
+    });
+    logo.style.opacity = this;
+  }
+});
