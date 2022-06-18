@@ -583,3 +583,19 @@ p {
 .features__header {
   font-size: 3rem;
 }
+@media screen and (max-width: 767px) {
+  .nav__menu {
+    position: fixed;
+    background-color: var(--container-color);
+    box-shadow: 0 0 4px;
+    padding: 2.5rem 0;
+    width: 90%;
+    top: -100%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    border-radius: 2rem;
+    z-index: var(--z-fixed);
+    transition: 0.4s;
+  }
+}
