@@ -599,3 +599,7 @@ p {
     transition: 0.4s;
   }
 }
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
