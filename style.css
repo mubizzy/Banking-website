@@ -61,8 +61,11 @@ body {
   padding: 0.8rem 2.5rem;
   background-color: #b51ddb;
   border-radius: 3rem;
+  display: none;
 }
-
+.nav__link--btn {
+  display: none;
+}
 .nav__logo {
   height: 4.5rem;
   transition: all 0.3s;
