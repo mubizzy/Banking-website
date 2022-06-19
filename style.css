@@ -223,10 +223,9 @@ h4 {
   gap: 2rem;
   margin-bottom: 2rem;
 }
-.operations__tab {
+/* .operations__tab {
   /* margin-right: 2.5rem; */
-  /* transform: translateY(-50%); */
-}
+/* transform: translateY(-50%); */
 
 .operations__tab span {
   margin-right: 1rem;
