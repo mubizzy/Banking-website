@@ -72,7 +72,7 @@ body {
 }
 
 .nav__toggle {
-  font-size: 1.5rem;
+  font-size: 3rem;
   cursor: pointer;
 }
 .nav__link--btn:hover,
@@ -141,6 +141,7 @@ h4 {
   background-image: var(--gradient-primary);
   /* max-width: 80rem;
   margin: 0 auto 8rem auto; */
+  transform: scale(1.07, 1.05) skewX(-15deg);
 }
 .section__description {
   font-size: 1.8rem;
