@@ -10,7 +10,7 @@
   --color-tertiary-opacity: #ff58602d;
   /* --gradient-primary: linear-gradient(to top left, #39b385, #9be15d); */
   --gradient-secondary: to top left, #ffb003, #ffcb03;
-  -gradient-primary: linear-gradient(to top left, #6a0d81, #b521da);
+  --gradient-primary: linear-gradient(to top left, #6a0d81, #b521da);
 }
 * {
   margin: 0;
@@ -137,7 +137,8 @@ h4 {
   width: 100%;
   z-index: -1;
   bottom: 0;
-  left: 0`;
+  left: 0;
+  background-image: var(--gradient-primary);
   /* max-width: 80rem;
   margin: 0 auto 8rem auto; */
 }
